@@ -8,15 +8,14 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication appServer(argc, argv);
+    QApplication app(argc, argv);
     Dialog dialog;
     dialog.show();
     // return app.exec();
 
-    QApplication appClient(argc, argv);
     BlockingClient client;
     client.show();
     // return app.exec();
 
-    return appServer.exec();
+    return app.exec();
 }

@@ -1,8 +1,16 @@
 #pragma once
 
-#include <QThread>
+// #include <QThread>
 #include <QTcpSocket>
+#include <QRunnable>
 
+class ServerTask: public QRunnable
+{
+public:
+  void run() override;
+};
+
+/*
 class ServerThread : public QThread
 {
   Q_OBJECT
@@ -19,3 +27,4 @@ private:
   int socketDescriptor;
   QString text;
 };
+*/
