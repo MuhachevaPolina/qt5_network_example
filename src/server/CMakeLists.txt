@@ -12,7 +12,7 @@ find_package(Qt5 REQUIRED COMPONENTS Network)
 
 add_library(server STATIC
     FortuneServer.cpp
-    ServerThread.cpp
+    ServerTask.cpp
     Dialog.cpp
 )
 

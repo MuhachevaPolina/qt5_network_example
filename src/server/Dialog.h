@@ -4,7 +4,6 @@
 #include "FortuneServer.h"
 
 #include <QWidget>
-#include <QThreadPool>
 
 QT_BEGIN_NAMESPACE
 class QLabel;
@@ -22,7 +21,6 @@ private:
     QLabel *statusLabel;
     QPushButton *quitButton;
     FortuneServer server;
-    QThreadPool m_threadPool;
 };
 
 #endif

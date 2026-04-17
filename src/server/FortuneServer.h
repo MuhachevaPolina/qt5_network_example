@@ -2,6 +2,7 @@
 
 #include <QTcpServer>
 #include <QStringList>
+#include <QThreadPool>
 
 class FortuneServer : public QTcpServer
 {
@@ -14,5 +15,6 @@ protected:
   void incomingConnection(qintptr socketDescriptor) override;
 
 private:
-  QStringList fortunes;
+  QStringList m_fortunes;
+  QThreadPool m_pool;
 };

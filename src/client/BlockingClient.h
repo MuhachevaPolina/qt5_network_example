@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ClientThread.h"
+#include "ClientWorker.h"
 
 #include <QWidget>
 
@@ -36,7 +36,7 @@ private:
   QPushButton *quitButton;
   QDialogButtonBox *buttonBox;
 
-  ClientThread thread;
+  // ClientThread thread;
   QString currentFortune;
 };
 //! [0]

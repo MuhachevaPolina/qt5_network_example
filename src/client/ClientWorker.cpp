@@ -1,7 +1,8 @@
-#include "ClientThread.h"
+#include "ClientWorker.h"
 
 #include <QtNetwork>
 
+/*
 ClientThread::ClientThread(QObject *parent)
     : QThread(parent), quit(false)
 {
@@ -85,4 +86,4 @@ void ClientThread::run()
     }
 //! [15]
 }
-
+*/

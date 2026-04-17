@@ -56,9 +56,9 @@ BlockingClient::BlockingClient(QWidget *parent)
     connect(portLineEdit, &QLineEdit::textChanged,
             this, &BlockingClient::enableGetFortuneButton);
 //! [0]
-    connect(&thread, &ClientThread::newFortune,
+    connect(&thread, /*&ClientThread::newFortune,*/
             this, &BlockingClient::showFortune);
-    connect(&thread, &ClientThread::error,
+    connect(&thread, /*&ClientThread::error,*/
             this, &BlockingClient::displayError);
 //! [0]
 
@@ -79,8 +79,8 @@ BlockingClient::BlockingClient(QWidget *parent)
 void BlockingClient::requestNewFortune()
 {
     getFortuneButton->setEnabled(false);
-    thread.requestNewFortune(hostLineEdit->text(),
-                             portLineEdit->text().toInt());
+    /*thread.requestNewFortune(hostLineEdit->text(),
+                             portLineEdit->text().toInt());*/
 }
 //! [1]
 

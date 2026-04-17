@@ -1,13 +1,17 @@
-#include "ServerThread.h"
+#include "ServerTask.h"
 
 #include <QDataStream>
 #include <QByteArray>
+
+ServerTask::ServerTask(qintptr socketDescriptor, const QString& fortune)
+: m_socketDescriptor(socketDescriptor), m_fortune(fortune)
+{}
 
 void ServerTask::run()
 {
   QTcpSocket tcpSocket;
 
-  if (!tcpSocket.setSocketDescriptor(socketDescriptor)) 
+  if (!tcpSocket.setSocketDescriptor(this->m_socketDescriptor)) 
   {
     emit error(tcpSocket.error());
     return;
@@ -16,7 +20,8 @@ void ServerTask::run()
   QByteArray block;
   QDataStream out(&block, QIODevice::WriteOnly);
   out.setVersion(QDataStream::Qt_4_0);
-  out << text;
+  out << this->m_fortune;
+
   tcpSocket.write(block);
   tcpSocket.disconnectFromHost();
   tcpSocket.waitForDisconnected();

@@ -4,6 +4,17 @@
 #include <QMutex>
 #include <QWaitCondition>
 
+class ClientWorker: public QObject
+{
+  Q_OBJECT
+
+public:
+
+private:
+
+};
+
+/*
 //! [0]
 class ClientThread : public QThread
 {
@@ -28,3 +39,4 @@ private:
     bool quit;
 };
 //! [0]
+*/
