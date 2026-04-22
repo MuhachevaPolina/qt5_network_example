@@ -13,7 +13,7 @@ find_package(Qt5 REQUIRED COMPONENTS Network)
 
 add_library(client STATIC
     BlockingClient.cpp
-    ClientThread.cpp
+    ClientWorker.cpp
 )
 
 target_link_libraries(client PRIVATE

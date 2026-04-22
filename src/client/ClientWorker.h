@@ -1,7 +1,7 @@
 #pragma once
 
-#include <QThread>
-#include <QMutex>
+#include <QObject>
+#include <QString>
 #include <QWaitCondition>
 
 class ClientWorker: public QObject
@@ -9,9 +9,16 @@ class ClientWorker: public QObject
   Q_OBJECT
 
 public:
-
+  ClientWorker(const QString& hostName, uint port, QObject *parent = nullptr);
+signals:
+  void finished();
+  void newFortune(const QString& fortune);
+  void error(int socketError, const QString& message);
+public slots:
+  void process();
 private:
-
+  QString m_hostName;
+  uint m_port;
 };
 
 /*
