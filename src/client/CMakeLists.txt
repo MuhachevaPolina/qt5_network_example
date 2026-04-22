@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15.0)
 cmake_policy(SET CMP0016 NEW)
-project(async_input-output VERSION 1.0.0 DESCRIPTION "Знакомство с асинхронным вводом/выводом на C++")
+project(qt-multithreading VERSION 1.0.0 DESCRIPTION "Знакомство с многопоточностью и сетевым обменом в Qt5")
 
 
 set(CMAKE_AUTOMOC ON)

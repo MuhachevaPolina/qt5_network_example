@@ -7,7 +7,7 @@ include_directories(${CMAKE_SOURCE_DIR}/src)
 add_subdirectory(src/server)
 add_subdirectory(src/client)
 
-# enable_testing()
+enable_testing()
 add_subdirectory(test/server)
 add_subdirectory(test/client)
 
