@@ -3,21 +3,21 @@
 
 #include <stdlib.h>
 
-#include "Dialog.h"
-#include "FortuneServer.h"
+#include <src/server/Dialog.h>
+#include <src/server/FortuneServer.h>
 
 Dialog::Dialog(QWidget *parent)
     : QWidget(parent)
 {
-    statusLabel = new QLabel;
-    statusLabel->setWordWrap(true);
-    quitButton = new QPushButton(tr("Quit"));
-    quitButton->setAutoDefault(false);
+    this->m_statusLabel = new QLabel;
+    this->m_statusLabel->setWordWrap(true);
+    this->m_quitButton = new QPushButton(tr("Quit"));
+    this->m_quitButton->setAutoDefault(false);
 
-    if (!server.listen()) {
+    if (!this->m_server.listen()) {
         QMessageBox::critical(this, tr("Threaded Fortune Server"),
                               tr("Unable to start the server: %1.")
-                              .arg(server.errorString()));
+                              .arg(this->m_server.errorString()));
         close();
         return;
     }
@@ -35,19 +35,19 @@ Dialog::Dialog(QWidget *parent)
     // if we did not find one, use IPv4 localhost
     if (ipAddress.isEmpty())
         ipAddress = QHostAddress(QHostAddress::LocalHost).toString();
-    statusLabel->setText(tr("The server is running on\n\nIP: %1\nport: %2\n\n"
+    this->m_statusLabel->setText(tr("The server is running on\n\nIP: %1\nport: %2\n\n"
                             "Run the Fortune Client example now.")
-                         .arg(ipAddress).arg(server.serverPort()));
+                         .arg(ipAddress).arg(this->m_server.serverPort()));
 
-    connect(quitButton, &QPushButton::clicked, this, &Dialog::close);
+    connect(this->m_quitButton, &QPushButton::clicked, this, &Dialog::close);
 
     QHBoxLayout *buttonLayout = new QHBoxLayout;
     buttonLayout->addStretch(1);
-    buttonLayout->addWidget(quitButton);
+    buttonLayout->addWidget(this->m_quitButton);
     buttonLayout->addStretch(1);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
-    mainLayout->addWidget(statusLabel);
+    mainLayout->addWidget(this->m_statusLabel);
     mainLayout->addLayout(buttonLayout);
     setLayout(mainLayout);
     setWindowTitle(tr("Threaded Fortune Server"));

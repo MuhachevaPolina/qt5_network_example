@@ -1,4 +1,4 @@
-#include "ServerTask.h"
+#include <src/server/ServerTask.h>
 
 #include <QDataStream>
 #include <QByteArray>

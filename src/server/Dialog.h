@@ -1,7 +1,7 @@
 #ifndef DIALOG_H
 #define DIALOG_H
 
-#include "FortuneServer.h"
+#include <src/server/FortuneServer.h>
 
 #include <QWidget>
 
@@ -12,15 +12,15 @@ QT_END_NAMESPACE
 
 class Dialog : public QWidget
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    Dialog(QWidget *parent = nullptr);
+  Dialog(QWidget *parent = nullptr);
 
 private:
-    QLabel *statusLabel;
-    QPushButton *quitButton;
-    FortuneServer server;
+  QLabel *m_statusLabel;
+  QPushButton *m_quitButton;
+  FortuneServer m_server;
 };
 
 #endif

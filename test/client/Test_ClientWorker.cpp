@@ -1,6 +1,11 @@
 #include <gtest/gtest.h>
 
-TEST(ServerTask, CheckForOneFortune)
+TEST(ClientWorker, CheckForOneFortuneCorrect)
+{
+
+}
+
+TEST(ClientWorker, CheckForOneFortuneWrong)
 {
 
 }

@@ -1,6 +1,6 @@
-#include "FortuneServer.h"
+#include <src/server/FortuneServer.h>
 
-#include "ServerTask.h"
+#include <src/server/ServerTask.h>
 
 #include <QRandomGenerator>
 #include <QDataStream>

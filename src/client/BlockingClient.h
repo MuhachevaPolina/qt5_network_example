@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ClientWorker.h"
+#include <src/client/ClientWorker.h>
 
 #include <QWidget>
 

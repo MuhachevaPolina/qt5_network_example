@@ -1,4 +1,4 @@
-#include "BlockingClient.h"
+#include <src/client/BlockingClient.h>
 
 #include <QtWidgets>
 #include <QtNetwork>
