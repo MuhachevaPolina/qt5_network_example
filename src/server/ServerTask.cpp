@@ -23,6 +23,7 @@ void ServerTask::run()
   out << this->m_fortune;
 
   tcpSocket.write(block);
+
   tcpSocket.disconnectFromHost();
   tcpSocket.waitForDisconnected();
 }

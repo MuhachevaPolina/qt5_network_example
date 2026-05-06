@@ -39,6 +39,12 @@ target_link_libraries(server_test_utils PUBLIC
 
 add_executable(tests
     test/server/Test_ServerTask.cpp
+    test/server/Test_FortuneServer.cpp
+    test/client/Test_ClientWorker.cpp
+)
+
+add_executable(app
+    src/main.cpp
 )
 
 target_include_directories(tests PUBLIC
@@ -59,6 +65,15 @@ target_link_libraries(tests PRIVATE
     Qt5::Widgets
     Qt5::Network
 )
+
+target_link_libraries(app PRIVATE
+    server
+    client
+    Qt5::Core
+    Qt5::Widgets
+    Qt5::Network
+)
+
 
 include(GoogleTest)
 gtest_discover_tests(tests)

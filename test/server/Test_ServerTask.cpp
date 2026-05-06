@@ -6,7 +6,7 @@
 #include <QCoreApplication>
 #include <QElapsedTimer>
 
-TEST(SeverTask, CheckForOneFortune)
+TEST(SeverTaskTests, CheckForOneFortune)
 {
   utilities::SimpleServer server;
   ASSERT_TRUE(server.listen(QHostAddress::LocalHost, 0));
